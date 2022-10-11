@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalculatorController {
 
     @GetMapping("/add")
-    public float addition(@RequestParam(name="a", required = true) float a,@RequestParam(name="b", required = true) float b){
+    public float addition(@RequestParam(name="a", required = true) double a,@RequestParam(name="b", required = true) double b){
         return a+b;
     }
     @GetMapping("/sub")
-    public float subtraction(@RequestParam(name="a", required = true) float a,@RequestParam(name="b", required = true) float b){
+    public float subtraction(@RequestParam(name="a", required = true) double a,@RequestParam(name="b", required = true) double b){
         return a-b;
     }
     @GetMapping("/mul")
-    public float multiplication(@RequestParam(name="a", required = true) float a,@RequestParam(name="b", required = true) float b){
+    public float multiplication(@RequestParam(name="a", required = true) double a,@RequestParam(name="b", required = true) double b){
         return a*b;
     }
     @GetMapping("/div")
-    public float division(@RequestParam(name="a", required = true) float a,@RequestParam(name="b", required = true) float b){
+    public float division(@RequestParam(name="a", required = true) double a,@RequestParam(name="b", required = true) double b){
         return a/b;
     }
 }
