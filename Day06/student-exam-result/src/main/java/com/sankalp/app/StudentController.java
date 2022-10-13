@@ -7,7 +7,6 @@ import java.util.Map;
 
 @RestController
 public class StudentController {
-
     private Map<String,Student> studentMap= new HashMap<String,Student>();
 
     @GetMapping("/get/student")
@@ -26,7 +25,6 @@ public class StudentController {
         String name= student.getName();
         studentMap.put(name,student);
     }
-
     @PutMapping("/update/student")
     public Student updateStudent(@RequestParam String name,@RequestParam String schoolName){
         Student result= studentMap.get(name);
@@ -35,7 +33,6 @@ public class StudentController {
         return result;
 
     }
-
     @DeleteMapping("/remove/student")
     public void deleteStudent(@RequestParam String name){
         studentMap.remove(name);
