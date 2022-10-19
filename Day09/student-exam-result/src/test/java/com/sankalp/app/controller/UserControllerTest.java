@@ -1,7 +1,7 @@
 package com.sankalp.app.controller;
 
 import com.sankalp.app.model.Users;
-import com.sankalp.app.repository.UsersRepository;
+//import com.sankalp.app.repository.UsersRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

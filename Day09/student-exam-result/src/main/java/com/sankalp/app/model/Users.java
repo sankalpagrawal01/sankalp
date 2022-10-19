@@ -10,6 +10,8 @@ public class Users {
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
+    private Integer id;
     @Column(name = "rollNo")
     private String rollNo;
     @Column(name = "name")
@@ -29,7 +31,13 @@ public class Users {
 
     public Users() {
     }
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getRollNo() {
         return rollNo;
     }
