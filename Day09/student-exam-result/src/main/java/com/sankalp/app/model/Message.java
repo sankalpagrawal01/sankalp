@@ -9,8 +9,8 @@ import javax.persistence.Id;
 public class Message {
     @Id
     @GeneratedValue
-    @Column(name = "corelatename")
-    private String name;
+    @Column(name = "corelatiID")
+    private Integer id;
     @Column(name = "to")
     private String to;
     @Column(name = "from")
@@ -18,12 +18,12 @@ public class Message {
     @Column(name = "message")
     private String message;
 
-    public String getName() {
-        return name;
+    public Integer getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTo() {

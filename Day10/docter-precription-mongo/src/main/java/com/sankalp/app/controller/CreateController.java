@@ -8,37 +8,38 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/precription")
+@RequestMapping("/customer")
 public class CreateController {
   @Autowired
-  PrecriptionRepository precriptionRepo;
+  CustomerRepository customerRepo;
 
   @RequestMapping(value = "/create", method = RequestMethod.POST)
-  public Precription savePrecription(@RequestBody Precription precription) {
-    precription = precriptionRepo.save(precription);
-    return precription;
+  public Customer saveCustomer(@RequestBody Customer customer) {
+    customer = customerRepo.save(customer);
+    return customer;
   }
 
   @RequestMapping(value = "/read", method = RequestMethod.GET)
-  public List<Precription> readPrecription() {
-    return precriptionRepo.findAll();
+  public List<Customer> readCustomer() {
+    return customerRepo.findAll();
   }
 
   @RequestMapping(value = "/update", method = RequestMethod.PUT)
-  public void modifyByID(@RequestParam String prescriptionId, @RequestParam String patientName) {
-    Precription precription = precriptionRepo.findByName(patientName);
-    precription.setPrescriptionId(prescriptionId);
-    precriptionRepo.save(precription);
+  public void modifyByPatientName(@RequestParam String doctorName, @RequestParam String patientName) {
+    Customer customer = customerRepo.findByPatientName(patientName);
+    customer.setDoctorName(doctorName);
+    customerRepo.save(customer);
   }
 
   @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-  public void deleteByID(@RequestParam String prescriptionId) {
-    precriptionRepo.deleteByID(prescriptionId);
+  public void deleteByPatientName(@RequestParam String patientName) {
+    customerRepo.deleteByPatientName(patientName);
   }
 
-  @RequestMapping(value = "/findByname", method = RequestMethod.GET)
-  public void findByNAME(@RequestParam String patientName) {
-    precriptionRepo.findBypatientname(patientName);
+  @RequestMapping(value = "/findByName", method = RequestMethod.GET)
+  public void findByPatientName(@RequestParam String patientName) {
+    customerRepo.findByPatientName(patientName);
   }
+
 
 }
