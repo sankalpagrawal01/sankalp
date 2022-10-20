@@ -66,10 +66,9 @@ docker-compose  up
 docker exec -it <containerID> bash
 ```
 
-## Testing
+## Swagger testing
 ```bash
-http://localhost:8080/
+http://localhost:8083/swagger-ui/index.html
 ```
-
 
 
