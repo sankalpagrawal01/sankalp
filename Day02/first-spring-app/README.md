@@ -9,5 +9,5 @@ mvn spring-boot:run
 ```
 ## Swagger testing
 ```bash
-http://localhost:8083/swagger-ui/index.html
+http://localhost:8080/swagger-ui/index.html
 ```
